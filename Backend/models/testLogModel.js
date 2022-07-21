@@ -14,7 +14,7 @@ const testLogSchema = mongoose.Schema({
             required: [true, 'Please add a suiteFail value']
         },
         stepFails: {
-            type: String,
+            type: Number,
             required: [true, 'Please add a stepFails value']
         },
         fullTestLog: {
