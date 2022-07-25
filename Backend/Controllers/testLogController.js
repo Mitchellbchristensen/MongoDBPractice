@@ -10,30 +10,30 @@ const getTestLogs = asyncHandler(async (req, res) => {
 
 // set goals
 const setTestLogs = asyncHandler(async (req, res) => {
-    const setDateTime = new Date()
+    const setDateTime = Date.now()
 
     if(!req.body.title) {
         res.status(400)
         throw new Error('Title not found')
     }
-    if(!req.body.suiteFail) {
+    if(!req.body.testFail) {
         res.status(400)
-        throw new Error('suiteFail not found')
+        throw new Error('testFail not found')
     }
-    if(!req.body.stepFails) {
-        res.status(400)
-        throw new Error('stepFails not found')
-    }
-    if(!req.body.fullTestLog) {
-        res.status(400)
-        throw new Error('fullTestLog not found')
-    }
+    // if(!req.body.stepFails) {
+    //     res.status(400)
+    //     throw new Error('stepFails not found')
+    // }
+    // if(!req.body.fullTestLog) {
+    //     res.status(400)
+    //     throw new Error('fullTestLog not found')
+    // }
     const setLog = await testLog.create({
         title: req.body.title,
         runDateTime: setDateTime, // Do we need this? Is the CreateAt time good enough?
-        suiteFail: req.body.suiteFail,
-        stepFails: req.body.stepFails,
-        fullTestLog: req.body.fullTestLog,
+        testFail: req.body.testFail,
+        // stepFails: req.body.stepFails,
+        // fullTestLog: req.body.fullTestLog,
     })
 
     res.status(200).json(setLog)

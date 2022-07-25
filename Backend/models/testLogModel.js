@@ -7,20 +7,20 @@ const testLogSchema = mongoose.Schema({
         },
         runDateTime: {
             type: String,
-            required: [true, 'Please add a runDateTime value']
+            required: [false, 'Please add a runDateTime value']
         },
-        suiteFail: {
+        testFail: {
             type: Boolean,
-            required: [true, 'Please add a suiteFail value']
-        },
-        stepFails: {
-            type: Number,
-            required: [true, 'Please add a stepFails value']
-        },
-        fullTestLog: {
-            type: String,
-            required: [true, 'Please add a fullTestLog value']
-        },
+            required: [true, 'Please add a testFail value']
+        }
+        // stepFails: {
+        //     type: Number,
+        //     required: [true, 'Please add a stepFails value']
+        // },
+        // fullTestLog: {
+        //     type: String,
+        //     required: [true, 'Please add a fullTestLog value']
+        // },
 },
     {
         timestamps: true,
