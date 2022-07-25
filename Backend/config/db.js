@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbConnectionURI = `uri`
+const dbConnectionURI = `url`
 
 const connectDB = async () => {
     try {
