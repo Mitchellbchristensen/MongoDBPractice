@@ -12,15 +12,15 @@ const getTestLogs = asyncHandler(async (req, res) => {
 const setTestLogs = asyncHandler(async (req, res) => {
     const setDateTime = Date.now()
 
-    if(!req.body.title) {
+    if(!req?.body?.title) {
         res.status(400)
         throw new Error('Title not found')
     }
-    if(!req.body.testFail) {
+    if(typeof(req?.body?.testFail) !== "boolean") {
         res.status(400)
         throw new Error('testFail not found')
     }
-    if(!req.body.stepFails) {
+    if(typeof(req?.body?.stepFails) !== "number") {
         res.status(400)
         throw new Error('stepFails not found')
     }
