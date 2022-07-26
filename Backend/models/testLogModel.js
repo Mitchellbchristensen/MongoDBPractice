@@ -9,11 +9,11 @@ const testLogSchema = mongoose.Schema({
             type: String,
             required: [false, 'Please add a runDateTime value']
         },
-        stepFails: {
+        numberOfStepFails: {
             type: Number,
             required: [true, 'Please add a stepFails value']
         },
-        testFail: {
+        testPassed: {
             type: Boolean,
             required: [true, 'Please add a testFail value']
         }

@@ -16,19 +16,19 @@ const setTestLogs = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Title not found')
     }
-    if(typeof(req?.body?.testFail) !== "boolean") {
+    if(typeof(req?.body?.testPassed) !== "boolean") {
         res.status(400)
-        throw new Error('testFail not found')
+        throw new Error('testPassed not found')
     }
-    if(typeof(req?.body?.stepFails) !== "number") {
+    if(typeof(req?.body?.numberOfStepFails) !== "number") {
         res.status(400)
-        throw new Error('stepFails not found')
+        throw new Error('numberOfStepFails not found')
     }
     const setLog = await testLog.create({
         title: req.body.title,
         runDateTime: setDateTime,
-        stepFails: req.body.stepFails,
-        testFail: req.body.testFail
+        numberOfStepFails: req.body.numberOfStepFails,
+        testPassed: req.body.testPassed
     })
 
     res.status(200).json(setLog)
