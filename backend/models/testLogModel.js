@@ -16,8 +16,12 @@ const testLogSchema = mongoose.Schema({
         testPassed: {
             type: Boolean,
             required: [true, 'Please add a testFail value']
-        }
-},
+        },
+        validTestRun: {
+            type: Boolean,
+            required: [false, 'Please add a testFail value']
+        },
+    },
     {
         timestamps: true,
     }
